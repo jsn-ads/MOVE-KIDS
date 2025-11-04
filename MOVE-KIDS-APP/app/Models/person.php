@@ -3,14 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class person extends Model
+abstract class Person extends Model
 {
-    use SoftDeletes;
-
-    protected $table = 'people';
-
     protected $fillable = [
         'name',
         'father',
@@ -20,7 +15,4 @@ class person extends Model
         'cpf',
         'instagram',
     ];
-
-    protected $dates = ['deleted_at'];
-
 }
